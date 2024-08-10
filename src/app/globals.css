@@ -40,6 +40,10 @@
   --card-border-rgb: 131, 134, 135;
 }
 
+:lang(ar) {
+  direction: rtl;
+ }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -105,3 +109,5 @@ a {
     color-scheme: dark;
   }
 }
+
+

@@ -1,6 +1,17 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Box, Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import { useTranslations } from 'next-intl';
+import {getTranslations} from 'next-intl/server';
+
+// @ts-ignore
+export async function generateMetadata({params: {locale}}) {
+  const t = await getTranslations({locale, namespace: 'Metadata'});
+ 
+  return {
+    title: t('title')
+  };
+}
 
 const bull = (
   <Box
@@ -12,8 +23,13 @@ const bull = (
 );
 
 export default function Home() {
+  const t = useTranslations();
+
+
+
   return (
     <main className={styles.main}>
+      {t('welcome')}
     <h1>Hi I am Bushra Rehman Khan!</h1>
 
     <Card sx={{ minWidth: 275 , marginY: 5}}>
